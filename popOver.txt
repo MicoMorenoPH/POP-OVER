@@ -1,0 +1,28 @@
+//CREATE HTML
+<div class="table-responsive" id="popover-lotchange" data-placement="buttom" hidden>
+    <table class="table-bordered table-sm table-hover" id="tbl-lotlist">
+        <thead>
+            <tr>
+                <th class=" text-black" style="width:10rem!important">Lot Number</th>
+                <th class="th-M text-black" style="width:10rem!important">Expiry Date</th>
+                <th class="th-M text-black" style="width:5rem!important" id="tbl-lotlist-onhand">On Hand</th>
+                <th class="th-M text-black" style="width:5rem!important" id="tbl-lotlist-qty">Quantity</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+//JS TO SHOW
+ $(this).popover({
+                content: $("#popover-lotchange").html(),
+                html: true,
+                title: 'TAGGED LOT NUMBER',
+                container: 'body'
+            })
+$(this).popover("show");
+
+//JS TO HIDE
+$(document).on('mouseleave', '#i-btnLoad', function () {
+        $('.popover').popover('hide');
+});
